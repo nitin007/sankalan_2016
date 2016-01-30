@@ -10,6 +10,15 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
+
+//= require modernizr.custom.js
 //= require jquery
-//= require jquery_ujs
-//= require_tree .
+//= require bootstrap.min.js
+//= require jquery.easing.min.js
+//= require sankalanjs.min.js
+//= require wow.min.js
+//= require loader.js
+//= require custom.js
+//= require pop.js
+//= require class.js
+//= require modalEffects.js

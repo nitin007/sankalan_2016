@@ -9,5 +9,12 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require_tree .
+ *= require bootstrap.min.css
+ *= require font-awesome/css/font-awesome.min.css
+ *= require sankalanjs.min.css
+ *= require custom.css
+ *= require loader.css
+ *= require component.css
+ *= require animate.css
+ *= require pop.css
  */
