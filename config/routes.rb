@@ -1,4 +1,6 @@
 Sankalan2016::Application.routes.draw do
+  devise_for :teams
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

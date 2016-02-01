@@ -22,8 +22,6 @@ GEM
       activesupport (= 3.2.17)
       arel (~> 3.0.2)
       tzinfo (~> 0.3.29)
-    activerecord-mysql2-adapter (0.0.3)
-      mysql2
     activeresource (3.2.17)
       activemodel (= 3.2.17)
       activesupport (= 3.2.17)
@@ -31,6 +29,7 @@ GEM
       i18n (~> 0.6, >= 0.6.4)
       multi_json (~> 1.0)
     arel (3.0.3)
+    bcrypt (3.1.10)
     builder (3.0.4)
     byebug (8.2.1)
     capistrano (3.4.0)
@@ -38,6 +37,13 @@ GEM
       rake (>= 10.0.0)
       sshkit (~> 1.3)
     commonjs (0.2.6)
+    devise (3.5.1)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 3.2.6, < 5)
+      responders
+      thread_safe (~> 0.1)
+      warden (~> 1.2.3)
     erubis (2.7.0)
     hike (1.2.3)
     i18n (0.7.0)
@@ -58,10 +64,11 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.25.1)
     multi_json (1.11.2)
-    mysql2 (0.4.2)
+    mysql2 (0.3.20)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (3.0.2)
+    orm_adapter (0.5.0)
     polyglot (0.3.5)
     rack (1.4.7)
     rack-cache (1.6.0)
@@ -90,6 +97,8 @@ GEM
     rdoc (3.12.2)
       json (~> 1.4)
     ref (2.0.0)
+    responders (0.9.3)
+      railties (~> 3.1)
     sprockets (2.2.3)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -102,6 +111,7 @@ GEM
       libv8 (~> 3.16.14.0)
       ref
     thor (0.19.1)
+    thread_safe (0.3.5)
     tilt (1.4.1)
     treetop (1.4.15)
       polyglot
@@ -111,17 +121,19 @@ GEM
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)
+    warden (1.2.3)
+      rack (>= 1.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  activerecord-mysql2-adapter
   byebug
   capistrano
+  devise
   jquery-rails
   less-rails
-  mysql2
+  mysql2 (~> 0.3.10)
   rails (= 3.2.17)
   therubyracer
   unicorn
