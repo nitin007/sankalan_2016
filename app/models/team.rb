@@ -1,4 +1,6 @@
 class Team < ActiveRecord::Base
+  EVENTS = %w(all_events lan_gaming_only)
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -6,6 +8,8 @@ class Team < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :team_name, :email, :password, :password_confirmation, :remember_me
+
+  validates_presence_of :email, :events
 
   validates :team_name,
     :presence => true,
@@ -15,16 +19,10 @@ class Team < ActiveRecord::Base
 
   validates_format_of :team_name, with: /^[a-zA-Z0-9_\.]*$/, :multiline => true
 
-  # def self.find_first_by_auth_conditions(warden_conditions)
-  #   conditions = warden_conditions.dup
-  #   if login = conditions.delete(:login)
-  #     where(conditions.to_h).where(["lower(team_name) = :value", { :value => login }]).first
-  #   else
-  #     if conditions[:team_name].nil?
-  #       where(conditions).first
-  #     else
-  #       where(team_name: conditions[:team_name]).first
-  #     end
-  #   end
-  # end
+  has_many :members
+  belongs_to :captain, class_name: Member
+
+  def get_status
+    status? ? 'Active' : 'Inactive'
+  end
 end

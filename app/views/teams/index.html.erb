@@ -1,0 +1,19 @@
+<table>
+  <tr>
+    <th>Team name</th>
+    <th>Email</th>
+    <th>Contact no</th>
+    <th>No. of members</th>
+    <th>Actions</th>
+  </tr>
+
+  <% @teams.each do |team| %>
+    <tr>
+      <td><%= team.team_name %></td>
+      <td><%= team.email %></td>
+      <td><%= team.contact_no %></td>
+      <td><%= team.members_count %></td>
+      <td><%= link_to 'Edit', edit_team_path(team) %></td>
+    </tr>
+  <% end %>
+</table>

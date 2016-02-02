@@ -1,0 +1,131 @@
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand navbar-logo page-scroll" href="http://www.sankalanducs.in">
+        <img src="/assets/dusankalan.png" alt="DU SANKALAN">
+      </a>
+    </div>
+
+    <!-- Main Navigation -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a class="page-scroll" href="http://www.sankalanducs.in#contact">How to Register</a>
+        </li>
+      </ul>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container-fluid -->
+</nav>
+
+<div class="container">
+  <div id="team-details">
+  	<h2 align="center"> Your Team Details : </h2>
+  	<div id="teammembers">
+      <span>Team Status : <%= @team.get_status %></span>
+  		<br/>
+  		<span>If less than 2 team members, Team is inactive</span>
+  	</div>
+
+  	<div id="teammembers">Team members are : <%= @team.members_count %></div>
+
+    <%= form_for @team, url: change_captain_team_path(@team), method: :post do |f| %>
+    	<div id="captain">
+    		<span>Captain Name :</span>
+        <%= f.select :captain, options_from_collection_for_select(@team.members, :id, :name) %>
+    	</div>
+    <% end %>
+
+    <%= form_for @team, url: change_event_team_path(@team), method: :post do |f| %>
+    	<div id="captain" >
+    		<span>Events :</span>
+        <%= f.select :captain, events_collection %>
+    	</div>
+    <% end %>
+
+  	<div id="fees">Fees: 800rupees (4 members) for all events 300rs for lan gaming(nfs+cs)</div>
+
+  	<table id="viewdetails">
+    	<tr>
+      	<td>Full Name</td>
+      	<td>College Name</td>
+      	<td>Sex</td>
+      	<td>E-mail</td>
+      	<td>Contact Number</td>
+      	<td>Accomodation</td>
+        <td>Actions</td>
+    	<tr/>
+      <% @team.members.each do |member| %>
+        <tr>
+          <td><%= member.name %></td>
+        	<td><%= member.college %></td>
+        	<td><%= member.gender %></td>
+        	<td><%= member.email %></td>
+        	<td><%= member.contact_no %></td>
+        	<td><%= member.accomodation_required %></td>
+          <td>
+            <%= link_to 'Edit', edit_member_path(member) %>
+            |
+            <%= link_to 'Delete', member_path(member), method: :delete, data: {confirm: 'Are you sure?'} %>
+          </td>
+        </tr>
+      <% end %>
+  	</table>
+	</div>
+	<!-- <button>save changes</button>prompt to save changes?
+	<br/>
+	<button>Add more members</button>Update money accordingly min800rs 200rs for each new player
+	<br/>
+	<button>Remove member</button> -->
+</div>
+
+<style>
+  body{
+  padding:10px;
+  bgcolor:yellow;
+  }
+
+  #team-details{
+  margin-top:100px;
+  padding:10px;
+  width:100%;
+  background:none;
+  overflow:visible;
+  }
+
+  #viewdetails{
+    width: 100%;
+    border-collapse: collapse;
+  }
+  /* Zebra striping */
+  tr:nth-of-type(odd) {
+    background: #eee;
+  }
+  th {
+    background: #333;
+    color: white;
+    font-weight: bold;
+  }
+  td, th {
+    padding: 6px;
+    border: 1px solid #ccc;
+    text-align: left;
+  }
+
+</style>
+
+<% content_for :head do %>
+  <%#= stylesheet_link_tag "register" %>
+  <link rel="stylesheet" type="text/css" href="/assets/register.css" />
+  <link rel="stylesheet" type="text/css" href="/assets/demo.css" />
+  <noscript>
+    <link rel="stylesheet" type="text/css" href="fallback.css" />
+  </noscript>
+<% end %>
