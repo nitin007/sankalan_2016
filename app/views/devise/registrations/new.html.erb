@@ -1,34 +1,40 @@
-<h2>Sign up</h2>
+<div class="container">
+  <section class="main">
+  <header class="codrops-header-special">
+    <!--<h1>Animated Responsive Image Grid</h1>-->
+    <div class="container reg-container">
+      <div class="col-sm-4"></div>
+      <div class="col-sm-4">
+        <div class="well">
+          <ul class="nav nav-tabs">
+            <li class="active">
+              <a data-toggle="tab" href="#newuser">New Team</a>
+              <!--<span class="glyphicon glyphicon-user"></span>-->
+            </li>
+            <li>
+      		    <a data-toggle="tab" href="#registereduser">Registered Team</a>
+      		    <!--<span class="glyphicon glyphicon-log-in"></span>-->
+      		  </li>
+          </ul>
+          <div class="tab-content">
+            <%= render 'signup_form' %>
+            <%= render 'signin_form' %>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4"></div>
+    </div>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+  </section>
+</div>
+<%#= render "devise/shared/links" %>
 
-  <div class="field">
-    <%= f.label :team_name %><br />
-    <%= f.text_field :team_name, autofocus: true %>
-  </div>
+<%= javascript_include_tag "register.js" %>
+<script type="text/javascript">
+  function ValidatePassword() {var password = document.getElementById("pwd").value;var confirmPassword = document.getElementById("repwd").value;if (password != confirmPassword) {return false;}return true;}
+</script>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
+<% content_for :head do %>
+  <%= stylesheet_link_tag "register" %>
+  <%= stylesheet_link_tag "demo" %>
 <% end %>
-
-<%= render "devise/shared/links" %>
