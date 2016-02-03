@@ -1,7 +1,7 @@
 <div id="registereduser" class="tab-pane fade">
   <h4>REGISTERED TEAM LOGIN</h4>
   <p></p>
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: 'reg-form') do |f| %>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'reg-form'}) do |f| %>
     <div class="form-group">
       <%= f.label :team_name %><br />
       <%= f.text_field :team_name, autofocus: true, class: "form-control", id: "log-team", minlength: "4", maxlength: "20", size: "20", placeholder: "Team Name", required: true %>
