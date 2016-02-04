@@ -11,14 +11,10 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 
-// require modernizr.custom.js
+//
 //= require jquery
 //= require bootstrap.min.js
-// require jquery.easing.min.js
+//= require jquery.easing.min.js
 //= require sankalanjs.min.js
-// require wow.min.js
-// require loader.js
-// require custom.js
-// require pop.js
-// require class.js
-// require modalEffects.js
+//= require wow.min.js
+//= require helper.min.js
