@@ -72,7 +72,7 @@
         	<td><%= member.accomodation_required %></td>
           <td>
             <%= link_to 'Edit', edit_member_path(member) %>
-            | 
+            |
             <%= link_to 'Delete', member_path(member), method: :delete, data: {confirm: 'Are you sure?'} %>
           </td>
         </tr>
@@ -122,10 +122,6 @@
 </style>
 
 <% content_for :head do %>
-  <%#= stylesheet_link_tag "register" %>
-  <link rel="stylesheet" type="text/css" href="/assets/register.css" />
-  <link rel="stylesheet" type="text/css" href="/assets/demo.css" />
-  <noscript>
-    <link rel="stylesheet" type="text/css" href="fallback.css" />
-  </noscript>
+  <%= stylesheet_link_tag "register" %>
+  <%= stylesheet_link_tag "demo" %>
 <% end %>
