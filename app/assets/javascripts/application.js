@@ -12,5 +12,6 @@
 //
 
 //= require jquery
+//= require jquery.js
 //= require bootstrap.min.js
 //= require sankalanjs.min.js
