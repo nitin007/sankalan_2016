@@ -7,9 +7,9 @@ class Team < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, authentication_keys: [:team_name]
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :team_name, :email, :password, :password_confirmation, :remember_me, :contact_no
+  attr_accessible :team_name, :email, :password, :password_confirmation, :remember_me, :contact_no, :events
 
-  validates_presence_of :email#,:events
+  validates_presence_of :email, :events
 
   validates :team_name,
     :presence => true,

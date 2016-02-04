@@ -11,6 +11,6 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 
-// require jquery
-// require bootstrap.min.js
+//= require jquery
+//= require bootstrap.min.js
 // require sankalanjs.min.js

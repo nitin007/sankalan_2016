@@ -36,6 +36,9 @@
           <li>
             <a class="page-scroll" href="#contact">Contact</a>
           </li>
+          <li>
+            <%= link_to 'Logout', destroy_session_path(:team), method: :delete %>
+          </li>
         </ul>
       </div>
         <!-- /.navbar-collapse -->
@@ -695,8 +698,6 @@
   </div>
 </div>
 
-<%= javascript_include_tag "jquery" %>
-<%= javascript_include_tag "bootstrap.min" %>
 <%= javascript_include_tag "jquery.easing.min" %>
 <%= javascript_include_tag "sankalanjs.min.js" %>
 <%= javascript_include_tag "wow.min" %>

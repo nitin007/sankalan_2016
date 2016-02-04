@@ -5,26 +5,30 @@
     <%= devise_error_messages! %>
     <div class="form-group">
       <%= f.label :team_name %>
-      <%= f.text_field :team_name, class: 'form-control', minlength: "4", maxlength: "20", size: "20", placeholder: "Team Name", required: true %>
+      <%= f.text_field :team_name, class: 'form-control', minlength: "4", maxlength: "20", size: "20", required: true %>
     </div>
     <div class="form-group">
       <%= f.label :team_email %>
-      <%= f.email_field :email, class: 'form-control', size: "20", placeholder: "Team Email", oninvalid: "setCustomValidity('Please Enter a valid e-mail id')", oninput: "setCustomValidity('')", required: true %>
+      <%= f.email_field :email, class: 'form-control', size: "20", oninvalid: "setCustomValidity('Please Enter a valid e-mail id')", oninput: "setCustomValidity('')", required: true %>
     </div>
     <div class="form-group">
       <%= f.label :team_contact %>
-      <%= f.email_field :contact_no, class: 'form-control', size: "20", placeholder: "Team Contact" %>
+      <%= f.text_field :contact_no, class: 'form-control', size: "20" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :events %>
+      <%= f.select :events, [[1, 2]] class: 'form-control', size: "20" %>
     </div>
     <div class="form-group">
       <%= f.label :password %>
       <% if @minimum_password_length %>
       <em>(<%= @minimum_password_length %> characters minimum)</em>
       <% end %><br />
-      <%= f.password_field :password, autocomplete: "off", class: 'form-control', minlength: "6", maxlength: "20", size: "20", placeholder: "Password", required: true %>
+      <%= f.password_field :password, autocomplete: "off", class: 'form-control', minlength: "6", maxlength: "20", size: "20", required: true %>
     </div>
     <div class="form-group">
       <%= f.label :password_confirmation %><br />
-      <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control', minlength: "6", maxlength: "20", size: "20", placeholder: "Confirm Password", required: true %>
+      <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control', minlength: "6", maxlength: "20", size: "20", required: true %>
     </div>
     <div class="form-group">
       <%= f.submit "Sign up", value: 'Next', class: 'nomarginbutton btn btn-default', id: 'next_btn', onclick: "return ValidatePassword()" %>
