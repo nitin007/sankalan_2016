@@ -1,5 +1,6 @@
 body{
     background:#00A0D7;
+    overflow: scroll !important;
 }
 
 .reg-container{

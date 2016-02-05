@@ -16,112 +16,95 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <li>
-          <a class="page-scroll" href="http://www.sankalanducs.in#contact">How to Register</a>
+          <a class="page-scroll" href="http://www.sankalanducs.in#contact">Logout</a>
         </li>
       </ul>
     </div>
-    <!-- /.navbar-collapse -->
   </div>
-  <!-- /.container-fluid -->
 </nav>
 
-<div class="container">
-  <div id="team-details">
-  	<h2 align="center"> Your Team Details : </h2>
-  	<div id="teammembers">
-      <span>Team Status : <%= @team.get_status %></span>
-  		<br/>
-  		<span>If less than 2 team members, Team is inactive</span>
-  	</div>
 
-  	<div id="teammembers">Team members are : <%= @team.members_count %></div>
 
-    <%= form_for @team, url: change_captain_team_path(@team), method: :post do |f| %>
-    	<div id="captain">
-    		<span>Captain Name :</span>
-        <%= f.select :captain, options_from_collection_for_select(@team.members, :id, :name) %>
-    	</div>
-    <% end %>
-
-    <%= form_for @team, url: change_event_team_path(@team), method: :post do |f| %>
-    	<div id="captain" >
-    		<span>Events :</span>
-        <%= f.select :captain, events_collection %>
-    	</div>
-    <% end %>
-
-  	<div id="fees">Fees: 800rupees (4 members) for all events 300rs for lan gaming(nfs+cs)</div>
-
-  	<table id="viewdetails">
-    	<tr>
-      	<td>Full Name</td>
-      	<td>College Name</td>
-      	<td>Sex</td>
-      	<td>E-mail</td>
-      	<td>Contact Number</td>
-      	<td>Accomodation</td>
-        <td>Actions</td>
-    	<tr/>
-      <% @team.members.each do |member| %>
-        <tr>
-          <td><%= member.name %></td>
-        	<td><%= member.college %></td>
-        	<td><%= member.gender %></td>
-        	<td><%= member.email %></td>
-        	<td><%= member.contact_no %></td>
-        	<td><%= member.accomodation_required %></td>
-          <td>
-            <%= link_to 'Edit', edit_team_member_path(member) %>
-            |
-            <%= link_to 'Delete', team_member_path(member), method: :delete, data: {confirm: 'Are you sure?'} %>
-          </td>
-        </tr>
-      <% end %>
-  	</table>
-	</div>
-	<!-- <button>save changes</button>prompt to save changes?
-	<br/>
-	<button>Add more members</button>Update money accordingly min800rs 200rs for each new player
-	<br/>
-	<button>Remove member</button> -->
+<div class="teamdetails table-responsive">
+  <br />
+  <h1 align="center"> Welcome Team <%= @team.team_name %> , Your Details : </h1>
+  <br/><br/>
+  <table class="table table-striped table-bordered teamtableformat">
+    <thead>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Team Status : </td>
+        <td><%= @team.get_status %></td>
+      </tr>
+      <tr>
+        <td>Number of Members : </td>
+        <td><%= @team.members_count %></td>
+      </tr>
+      <tr>
+        <td>Team Captain : </td>
+        <td><%= form_for @team, url: change_captain_team_path(@team), method: :post do |f| %>
+            <%= f.select :captain, options_from_collection_for_select(@team.members, :id, :name) %>
+            <% end %>
+        </td>
+      </tr>
+      <tr>
+        <td>Events : </td>
+        <td><%= form_for @team, url: change_event_team_path(@team), method: :post do |f| %>
+            <%= f.select :captain, events_collection, class:"form-control" %>
+            <% end %>
+        </td>
+      </tr>
+       <tr>
+        <td>Email : </td>
+        <td><%= @team.email %></td>
+      </tr>
+      <tr>
+        <td>Contact : </td>
+        <td><%= @team.contact_no %></td>
+      </tr>
+    </tbody> 
+  </table>
+  <br />
+</div>
+<!-- Link to team's members page-->
+<div id="centerbutton">
+  <a href="#" class="btn btn-white" role="button">Edit Members Info</a>
+</div>
+ 
+<br />
+<div class="memberdetails">
+    <h2 class="currmem"> Current Members </h2>
+    <br />
+    <div class= "table-responsive">
+    	<table class="table table-striped table-bordered memberstableformat">
+        <thead>
+        	<tr>
+          	<td>Full Name</td>
+          	<td>College Name</td>
+          	<td>Sex</td>
+          	<td>E-mail</td>
+          	<td>Contact Number</td>
+          	<td>Accomodation</td>
+        	<tr/>
+      </thead>
+      <tbody>
+        <% @team.members.each do |member| %>
+          <tr>
+            <td><%= member.name %></td>
+          	<td><%= member.college %></td>
+          	<td><%= member.gender %></td>
+          	<td><%= member.email %></td>
+          	<td><%= member.contact_no %></td>
+          	<td><%= member.accomodation_required %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    	</table>
+    </div>
 </div>
 
-<style>
-  body{
-  padding:10px;
-  bgcolor:yellow;
-  }
-
-  #team-details{
-  margin-top:100px;
-  padding:10px;
-  width:100%;
-  background:none;
-  overflow:visible;
-  }
-
-  #viewdetails{
-    width: 100%;
-    border-collapse: collapse;
-  }
-  /* Zebra striping */
-  tr:nth-of-type(odd) {
-    background: #eee;
-  }
-  th {
-    background: #333;
-    color: white;
-    font-weight: bold;
-  }
-  td, th {
-    padding: 6px;
-    border: 1px solid #ccc;
-    text-align: left;
-  }
-
-</style>
-
 <% content_for :head do %>
-  <%= stylesheet_link_tag "register" %>
+  <%= stylesheet_link_tag "teampage" %>
   <%= stylesheet_link_tag "demo" %>
 <% end %>
