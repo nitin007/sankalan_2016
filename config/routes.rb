@@ -54,8 +54,8 @@ Sankalan2016::Application.routes.draw do
   resources :teams do
     post :change_captain, on: :member
     post :change_event, on: :member
+    resources :members, except: [:show]
   end
-  resources :members
 
   # See how all your routes lay out with "rake routes"
 

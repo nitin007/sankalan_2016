@@ -17,7 +17,7 @@
     </div>
     <div class="form-group">
       <%= f.label :events %>
-      <%= f.select :events, [[1, 2]] class: 'form-control', size: "20" %>
+      <%= f.select :events, events_collection, class: 'form-control', size: "20" %>
     </div>
     <div class="form-group">
       <%= f.label :password %>

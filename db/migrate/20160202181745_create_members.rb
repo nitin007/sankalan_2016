@@ -3,7 +3,7 @@ class CreateMembers < ActiveRecord::Migration
     create_table :members do |t|
       t.string :name
       t.string :email
-      t.integer :contact_no
+      t.string :contact_no
       t.string :gender
       t.boolean :accomodation_needed, default: false
       t.references :team

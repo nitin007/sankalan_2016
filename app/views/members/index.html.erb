@@ -1,0 +1,28 @@
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>College</th>
+    <th>Contact No.</th>
+    <th>Gender</th>
+    <th>Accomodation Required</th>
+    <th>Actions</th>
+  </tr>
+
+  <% @members.each do |m| %>
+    <tr>
+      <td><%= m.name %></td>
+      <td><%= m.email %></td>
+      <td><%= m.college %></td>
+      <td><%= m.contact_no %></td>
+      <td><%= m.gender %></td>
+      <td><%= m.accomodation_required %></td>
+      <td>
+        <%= link_to 'Edit', edit_team_member_path(@team, m) %>
+        <%= link_to 'Delete', team_member_path(@team, m), method: :delete, confirm: 'Are you sure?' %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'Add new member', new_team_member_path(@team) %>

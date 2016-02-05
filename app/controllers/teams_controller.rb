@@ -4,7 +4,7 @@ class TeamsController < ApplicationController
   end
 
   def show
-    @team = Team.includes(:members).where(id: params[:id]).last
+    @team = Team.find(params[:id])
   end
 
   def edit
