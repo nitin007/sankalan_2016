@@ -1,6 +1,6 @@
 class TeamsController < ApplicationController
   before_filter :authenticate_any!
-  before_filter :authorize_admin!, only: [:index]
+  before_filter :authorize_admin!
   before_filter :fetch_team, except: [:index]
 
   def index
@@ -21,18 +21,15 @@ class TeamsController < ApplicationController
 
   private
 
-    def authorize_team!
-      if current_team.id != params[:id].to_i
-        flash[:alert] = "You are not authorized to access other team's details!"
-        redirect_to team_path(current_team) and return
+    def authorize_admin!
+      if !admin_signed_in? && accessing_other_team_info?
+        flash[:alert] = "You are not authorized to access other team's info!"
+        redirect_to team_path(current_team)
       end
     end
 
-    def authorize_admin!
-      unless admin_signed_in?
-        flash[:alert] = "You are not authorized to access teams list!"
-        redirect_to team_path(current_team)
-      end
+    def accessing_other_team_info?
+      current_team.id != params[:id].to_i
     end
 
     def fetch_team
