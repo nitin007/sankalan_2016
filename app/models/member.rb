@@ -14,7 +14,7 @@ class Member < ActiveRecord::Base
 
   belongs_to :team, counter_cache: true
 
-  validate :members_limit
+  validate :members_limit, on: :create
   after_create :activate_team, :assign_captain
   after_destroy :deactivate_team
 
@@ -30,7 +30,7 @@ class Member < ActiveRecord::Base
     end
 
     def activate_team
-      team.update_attribute(:active, true) if(team.members.count >= 3)
+      team.update_attribute(:active, true) if(team.members.count >= 2)
     end
 
     def deactivate_team
@@ -38,6 +38,6 @@ class Member < ActiveRecord::Base
     end
 
     def members_limit
-      errors.add(:base, 'There can be maximum 6 members in a team!') if team.members_count >= 6
+      errors.add(:base, 'There can be maximum 6 members in a team!') if team.members.count > 6
     end
 end
