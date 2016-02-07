@@ -16,7 +16,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <li>
-          <a class="page-scroll" href="http://www.sankalanducs.in">Team Home</a>
+          <%= link_to 'Team Home', team_path(current_team) %>
         </li>
         <li>
           <a class="page-scroll" href="http://www.sankalanducs.in">Logout</a>
@@ -52,7 +52,7 @@
           <td><%= m.gender %></td>
           <td><%= m.accomodation_required %></td>
           <td>
-            <%= link_to 'Edit', edit_team_member_path(@team, m), class:"smallerbutt btn btn-info " %>
+            <%= link_to 'Edit', edit_team_member_path(@team.team_name, m), class:"smallerbutt btn btn-info " %>
             <%= link_to 'Delete', team_member_path(@team, m), class:"smallerbutt btn btn-info ", method: :delete, confirm: 'Are you sure?' %>
           </td>
         </tr>

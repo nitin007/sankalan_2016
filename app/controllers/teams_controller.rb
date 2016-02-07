@@ -9,11 +9,9 @@ class TeamsController < ApplicationController
 
   def show; end
 
-  def edit; end
-
-  def update
-    if @team.update_attributes(params[:team])
-      redirect_to @team, notice: 'You have successfully updated your team'
+  def change_captain
+    if @team.update_attributes(captain_id: params[:team][:captain_id])
+      redirect_to @team, notice: 'You have successfully updated your captain'
     else
       render :edit
     end
@@ -29,7 +27,7 @@ class TeamsController < ApplicationController
     end
 
     def accessing_other_team_info?
-      current_team.id != @team.id
+      current_team.id != @team.try(:id)
     end
 
     def fetch_team

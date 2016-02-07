@@ -3,6 +3,14 @@
 <div class="container reg-container toppad">
   <div class="col-sm-4"></div>
   <div class="col-sm-4">
+    <% if @member.errors.full_messages.present? %>
+      <h4>Please fix following errors:</h4>
+    <% end %>
+    <ul>
+      <% @member.errors.full_messages.each do |error| %>
+        <li><%= error %></li>
+      <% end %>
+    </ul>
     <%= form_for([@team, @member]) do |f| %>
       <div class='form-group'>
       <fieldset>
@@ -41,4 +49,3 @@
 <% content_for :head do %>
   <%= stylesheet_link_tag "teampage" %>
 <% end %>
-

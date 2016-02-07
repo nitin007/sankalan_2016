@@ -43,17 +43,15 @@
       </tr>
       <tr>
         <td>Team Captain : </td>
-        <td><%= form_for @team, url: change_captain_team_path(@team), method: :post do |f| %>
-            <%= f.select :captain, options_from_collection_for_select(@team.members, :id, :name) %>
+        <td><%= form_for @team, url: change_captain_team_path(@team), method: :put do |f| %>
+            <%= f.select :captain_id, options_from_collection_for_select(@team.members, :id, :name, selected: @team.captain_id)  %>
+            <%= f.submit 'Change Captain' %>
             <% end %>
         </td>
       </tr>
       <tr>
         <td>Events : </td>
-        <td><%= form_for @team, url: change_event_team_path(@team), method: :post do |f| %>
-            <%= f.select :captain, events_collection, class:"form-control" %>
-            <% end %>
-        </td>
+        <td><%= @team.events.humanize.titleize %></td>
       </tr>
        <tr>
         <td>Email : </td>
@@ -69,7 +67,7 @@
 </div>
 <!-- Link to team's members page-->
 <div id="centerbutton">
-  <a href="#" class="btn btn-white" role="button">Edit Members Info</a>
+  <%= link_to 'Edit Members Info', team_members_path(@team), class: "btn btn-white", role: "button" %>
 </div>
 
 <br />

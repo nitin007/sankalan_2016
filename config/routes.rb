@@ -56,12 +56,14 @@ Sankalan2016::Application.routes.draw do
 
   # authenticated :team do
   resources :teams do
-    post :change_captain, on: :member
-    post :change_event, on: :member
+    put :change_captain, on: :member
     resources :members, except: [:show]
   end
 
   resources :admins
+
+  resources :rules, only: :index, constraints: {format: :pdf}
+
 
   # end
 

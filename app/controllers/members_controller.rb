@@ -1,5 +1,5 @@
 class MembersController < ApplicationController
-  before_filter :authenticate_team
+  before_filter :authenticate_any!
   before_filter :fetch_team
   before_filter :fetch_member, only: [:edit, :update, :destroy]
   before_filter :build_member, only: [:new, :create]
@@ -42,7 +42,7 @@ class MembersController < ApplicationController
   private
 
     def fetch_team
-      @team = Team.find(params[:team_id])
+      @team = Team.find_by_team_name(params[:team_id])
     end
 
     def fetch_member

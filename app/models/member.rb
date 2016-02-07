@@ -18,9 +18,6 @@ class Member < ActiveRecord::Base
   after_create :activate_team
   after_destroy :deactivate_team
 
-  def to_param
-    team_name
-  end
 
   def accomodation_required
     accomodation_needed? ? 'Yes' : 'No'
@@ -29,7 +26,7 @@ class Member < ActiveRecord::Base
   private
 
     def activate_team
-      team.update_attribute(:active, true) if(team.members_count >= 3)
+      team.update_attribute(:active, true) if(team.members.count >= 3)
     end
 
     def deactivate_team
