@@ -212,6 +212,7 @@ Devise.setup do |config|
   # "users/sessions/new". It's turned off by default because it's slower if you
   # are using only default views.
   # config.scoped_views = false
+  config.scoped_views = true
 
   # Configure the default scope given to Warden. By default it's the first
   # devise role declared in your routes (usually :user).
@@ -262,7 +263,7 @@ Devise.setup do |config|
   # When using OmniAuth, Devise cannot automatically set OmniAuth path,
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
-  config.authentication_keys = [ :team_name ]
-  config.reset_password_keys = [ :team_name ]
-  config.confirmation_keys = [ :team_name ]
+  # config.authentication_keys = [ :team_name ]
+  # config.reset_password_keys = [ :team_name ]
+  # config.confirmation_keys = [ :team_name ]
 end

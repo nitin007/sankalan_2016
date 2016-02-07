@@ -1,0 +1,50 @@
+<div class="container">
+  <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand navbar-logo page-scroll" href="#page-top">
+          <%= image_tag "dusankalan.png", alt: "DU SANKALAN" %>
+        </a>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+  </nav>
+  <section class="main">
+  <header class="codrops-header-special">
+    <!--<h1>Animated Responsive Image Grid</h1>-->
+    <div class="container reg-container">
+      <div class="col-sm-4"></div>
+      <div class="col-sm-4">
+        <div class="well">
+          <ul class="nav nav-tabs">
+            <li class="active">
+              <a data-toggle="tab" href="#newuser">New Team</a>
+              <!--<span class="glyphicon glyphicon-user"></span>-->
+            </li>
+            <li>
+      		    <a data-toggle="tab" href="#registereduser">Registered Team</a>
+      		    <!--<span class="glyphicon glyphicon-log-in"></span>-->
+      		  </li>
+          </ul>
+          <div class="tab-content">
+            <%= render 'form' %>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4"></div>
+    </div>
+
+  </section>
+</div>
+<%#= render "devise/shared/links" %>
+
+<%= javascript_include_tag "register.js" %>
+<script type="text/javascript">
+  function ValidatePassword() {var password = document.getElementById("pwd").value;var confirmPassword = document.getElementById("repwd").value;if (password != confirmPassword) {return false;}return true;}
+</script>
+
+<% content_for :head do %>
+  <%= stylesheet_link_tag "register" %>
+  <%= stylesheet_link_tag "demo" %>
+<% end %>

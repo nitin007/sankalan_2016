@@ -1,4 +1,5 @@
 class MembersController < ApplicationController
+  before_filter :authenticate_team
   before_filter :fetch_team
   before_filter :fetch_member, only: [:edit, :update, :destroy]
   before_filter :build_member, only: [:new, :create]

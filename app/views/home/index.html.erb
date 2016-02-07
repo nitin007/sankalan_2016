@@ -37,8 +37,8 @@
             <a class="page-scroll" href="#contact">Contact</a>
           </li>
           <li>
-            <% if current_team %>
-              <%= link_to 'Logout', destroy_team_session_path, method: :delete %>
+            <% if resource_signed_in? %>
+              <%= link_to 'Logout', logout_path, method: :delete %>
             <% else %>
               <%= link_to 'Register/Login', new_team_registration_path %>
             <% end %>

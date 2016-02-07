@@ -1,0 +1,20 @@
+<div id="registereduser" class="tab-pane fade">
+  <h4>ADMIN LOGIN</h4>
+  <p></p>
+
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="form-group">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true, class: "form-control", id: "log-team", minlength: "4", maxlength: "20", size: "20", required: true %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :password %><br />
+      <%= f.password_field :password, autocomplete: "off", class: "form-control", id: "log-pwd", minlength: "6", maxlength: "20", size: "20", required: true %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Log in", class: "nomarginbutton btn btn-default" %>
+    </div>
+  <% end %>
+</div>

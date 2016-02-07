@@ -10,4 +10,8 @@ module ApplicationHelper
   def accomodation_options
     [['Yes', true], ['No', false]]
   end
+
+  def logout_path
+    team_signed_in? ? destroy_session_path(current_team) : destroy_session_path(current_admin)
+  end
 end
