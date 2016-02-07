@@ -96,6 +96,8 @@ GEM
     rake (10.5.0)
     rdoc (3.12.2)
       json (~> 1.4)
+    recaptcha (1.1.0)
+      json
     ref (2.0.0)
     responders (0.9.3)
       railties (~> 3.1)
@@ -135,5 +137,6 @@ DEPENDENCIES
   less-rails
   mysql2 (~> 0.3.10)
   rails (= 3.2.17)
+  recaptcha
   therubyracer
   unicorn

@@ -1,7 +1,7 @@
 Sankalan2016::Application.routes.draw do
   devise_for :admins#, :controllers => { :sessions => "admins/sessions" }
 
-  devise_for :teams
+  devise_for :teams, controllers: { registrations: 'registrations' }
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
