@@ -1,4 +1,5 @@
 body{
+    padding-top: 75px;
     background:radial-gradient(circle, #1a82f7, #2F2727);
     overflow: scroll !important;
 }
