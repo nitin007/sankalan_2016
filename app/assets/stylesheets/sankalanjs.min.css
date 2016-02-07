@@ -10,7 +10,7 @@ header:hover .header-background {transform: scale(2);-webkit-transform: scale(2)
 body{overflow: hidden;}
 #page-top{display:inline;}
 #mainNav{margin-bottom:0px;}
-#tevents{background: -webkit-radial-gradient(circle, #CFD8DC, #263238);  }
+#tevents{background: radial-gradient(circle, #CFD8DC, #263238);  }
 #tevents .section-heading { color: white !important; text-shadow: 3px 1px 4px #263238; } 
 .wrap-container{height:100%;}
 ::-webkit-scrollbar {display: none;}
