@@ -10,6 +10,9 @@
 	margin: 0;
 }
 
+ol {
+	padding-left: 20px;
+}
 /* General Demo Style */
 /*body {
 	font-family: 'Lato', 'Myriad Pro','Trebuchet MS', sans-serif;
