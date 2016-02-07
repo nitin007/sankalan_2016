@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(:version => 20160207141152) do
   create_table "members", :force => true do |t|
     t.string   "name"
     t.string   "email"
-    t.string   "contact_no"
+    t.integer  "contact_no"
     t.string   "gender"
     t.boolean  "accomodation_needed", :default => false
     t.integer  "team_id"
@@ -38,16 +38,16 @@ ActiveRecord::Schema.define(:version => 20160207141152) do
   end
 
   create_table "teams", :force => true do |t|
-    t.boolean  "active",                 :default => false
+    t.boolean  "active"
     t.integer  "captain_id"
-    t.datetime "created_at",                                :null => false
-    t.datetime "updated_at",                                :null => false
-    t.string   "email",                  :default => "",    :null => false
-    t.string   "encrypted_password",     :default => "",    :null => false
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
+    t.string   "email",                  :default => "", :null => false
+    t.string   "encrypted_password",     :default => "", :null => false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          :default => 0,     :null => false
+    t.integer  "sign_in_count",          :default => 0,  :null => false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"

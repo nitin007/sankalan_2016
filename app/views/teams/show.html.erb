@@ -45,7 +45,9 @@
         <td>Team Captain : </td>
         <td><%= form_for @team, url: change_captain_team_path(@team), method: :put do |f| %>
             <%= f.select :captain_id, options_from_collection_for_select(@team.members, :id, :name, selected: @team.captain_id)  %>
-            <%= f.submit 'Change Captain' %>
+            <br />
+            <br />
+            <%= f.submit 'Change Captain', :class =>"nomarginbutton form-control btn btn-default" %>
             <% end %>
         </td>
       </tr>
@@ -67,7 +69,7 @@
 </div>
 <!-- Link to team's members page-->
 <div id="centerbutton">
-  <%= link_to 'Edit Members Info', team_members_path(@team), class: "btn btn-white", role: "button" %>
+  <%= link_to 'Add Members Info', team_members_path(@team), class: "btn btn-white", role: "button" %>
 </div>
 
 <br />
@@ -97,6 +99,14 @@
           	<td><%= member.accomodation_required %></td>
           </tr>
         <% end %>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          <tr/>
       </tbody>
     	</table>
     </div>
