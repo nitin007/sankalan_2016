@@ -70,7 +70,7 @@
 </div>
 <br />
 <div id="centerbutton">
-  <%= link_to 'Add new member', new_team_member_path(@team), class:"btn btn-white" %>
+  <%= link_to 'Add new member', new_team_member_path(@team), class:"btn btn-white", disabled: @team.members_count == 6 %>
 </div>
 <br/>
 <br/>
