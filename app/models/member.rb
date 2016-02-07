@@ -15,7 +15,7 @@ class Member < ActiveRecord::Base
   belongs_to :team, counter_cache: true
 
   validate :members_limit
-  after_create :activate_team
+  after_create :activate_team, :assign_captain
   after_destroy :deactivate_team
 
 
@@ -24,6 +24,10 @@ class Member < ActiveRecord::Base
   end
 
   private
+
+    def assign_captain
+      team.update_attribute(:captain_id, self.id) if(team.members.count == 1)
+    end
 
     def activate_team
       team.update_attribute(:active, true) if(team.members.count >= 3)
