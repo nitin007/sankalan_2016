@@ -1,9 +1,13 @@
 body {
-	background: #00A0D7;
+	background:radial-gradient(circle, #1a82f7, #2F2727);
 	padding-top: 40px;
 	overflow: scroll;
 }
 
+#whiteheadin {
+	text-align: center;
+	color: white;
+}
 .currmem {
 	font-size: 4vh;
 	color: #fff;
@@ -36,7 +40,16 @@ body {
 }
 
 .memberstableformat {
+	font-size: 15px;
 	width: 75%;
+	margin-left:auto; 
+    margin-right:auto;
+    border: 3px solid grey;
+}
+
+.allmemberstableformat {
+	font-size: 15px;
+	width: 85%;
 	margin-left:auto; 
     margin-right:auto;
     border: 3px solid grey;
@@ -63,4 +76,8 @@ h1 {
 
 #centerbutton {
 	text-align: center;
+}
+
+.smallerbutt {
+	min-width: 100px;
 }
