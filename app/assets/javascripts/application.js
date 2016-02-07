@@ -15,3 +15,9 @@
 //= require jquery_ujs
 //= require bootstrap.min.js
 // require sankalanjs.min.js
+
+$(function(){
+  if($('p.alert-danger').text() == 'Invalid team_name or password.'){
+    $('.nav-tabs li:last a').click();
+  }
+});

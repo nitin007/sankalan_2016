@@ -7,9 +7,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand navbar-logo page-scroll" href="http://www.sankalanducs.in">
-        <img src="/assets/dusankalan.png" alt="DU SANKALAN">
-      </a>
+      <%= render 'shared/logo' %>
     </div>
 
     <!-- Main Navigation -->
@@ -19,7 +17,7 @@
           <%= link_to 'Team Home', team_path(current_team) %>
         </li>
         <li>
-          <a class="page-scroll" href="http://www.sankalanducs.in">Logout</a>
+          <%= link_to 'Logout', logout_path, method: :delete %>
         </li>
       </ul>
     </div>
