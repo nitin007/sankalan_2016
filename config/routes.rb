@@ -54,7 +54,6 @@ Sankalan2016::Application.routes.draw do
   # just remember to delete public/index.html.
   root :to => 'home#index'
 
-  # authenticated :team do
   resources :teams do
     put :change_captain, on: :member
     resources :members, except: [:show]

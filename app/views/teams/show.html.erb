@@ -51,7 +51,7 @@
       </tr>
       <tr>
         <td>Events : </td>
-        <td><%= @team.events.humanize.titleize %></td>
+        <td><%= @team.events.try(:humanize).try(:titleize) %></td>
       </tr>
        <tr>
         <td>Email : </td>
