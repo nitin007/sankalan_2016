@@ -1,5 +1,6 @@
 class Team < ActiveRecord::Base
   EVENTS = %w(all_events lan_gaming_only)
+  MEMBERS_LIMIT = 6
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -23,6 +24,6 @@ class Team < ActiveRecord::Base
   belongs_to :captain, class_name: Member
 
   def get_status
-    status? ? 'Active' : 'Inactive'
+    active? ? 'Active' : 'Inactive'
   end
 end
