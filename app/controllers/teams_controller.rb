@@ -1,7 +1,7 @@
 class TeamsController < ApplicationController
   before_filter :authenticate_any!
-  before_filter :authorize_admin!
   before_filter :fetch_team, except: [:index]
+  before_filter :authorize_admin!
 
   def index
     @teams = Team.all
@@ -29,10 +29,10 @@ class TeamsController < ApplicationController
     end
 
     def accessing_other_team_info?
-      current_team.id != params[:id].to_i
+      current_team.id != @team.id
     end
 
     def fetch_team
-      @team = Team.find(params[:id])
+      @team = Team.find_by_team_name(params[:id])
     end
 end

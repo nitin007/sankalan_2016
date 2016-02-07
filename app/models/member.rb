@@ -5,7 +5,7 @@ class Member < ActiveRecord::Base
 
   validates_presence_of :name, :email, :gender
 
-  validates_uniqueness_of :email, case_insensitive: true
+  validates_uniqueness_of :email, case_sensitive: false
   validates_uniqueness_of :contact_no, allow_blank: true
 
   validates_presence_of :contact_no, if: :accomodation_needed?
@@ -18,6 +18,14 @@ class Member < ActiveRecord::Base
   after_create :activate_team
   after_destroy :deactivate_team
 
+  def to_param
+    team_name
+  end
+
+  def accomodation_required
+    accomodation_needed? ? 'Yes' : 'No'
+  end
+
   private
 
     def activate_team
@@ -26,10 +34,6 @@ class Member < ActiveRecord::Base
 
     def deactivate_team
       team.update_attribute(:active, false) if(team.members.count <= 2)
-    end
-
-    def accomodation_required
-      accomodation_needed? ? 'Yes' : 'No'
     end
 
     def members_limit

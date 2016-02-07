@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource)
     case resource.class.to_s
     when "Team"
-      team_path(resource)
+      team_path(id: resource.team_name)
     when "Admin"
       teams_path
     end
