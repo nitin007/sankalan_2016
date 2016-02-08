@@ -34,14 +34,14 @@
             <a class="page-scroll" href="#sponsors">Our Sponsors</a>
           </li>
           <li>
-          <%= link_to 'Rules', rules_path(format: :pdf), target: '_blank' %>
+          <%= link_to 'Rules', sankalan_rules_path(format: :pdf), target: '_blank' %>
           </li>
           <li>
             <a class="page-scroll" href="#contact">Contact</a>
           </li>
           <li>
             <% if resource_signed_in? %>
-              <li> 
+              <li>
               <%= link_to 'Team Home', team_path(current_team) if team_signed_in? %>
               </li>
               <li>
@@ -601,7 +601,7 @@
           <ul> EVENT 2 : NEED FOR SPEED MOST WANTED <br/></ul>
       <ul>Individual Event</b><br/><br/></ul>
 
-      <%= link_to 'All Rules', rules_path(format: :pdf), target: '_blank', class: "btn btn-info" %>
+      <%= link_to 'All Rules', lan_gaming_rules_path(format: :pdf), target: '_blank', class: "btn btn-info" %>
       <!-- <a class="btn btn-info" target="_blank" href="Rules/LAN Rules Sankalan 16.pdf" >All Rules</a> -->
     </p>
     </center>

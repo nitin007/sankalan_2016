@@ -61,7 +61,10 @@ Sankalan2016::Application.routes.draw do
 
   resources :admins
 
-  resources :rules, only: :index, constraints: {format: :pdf}
+  resources :rules, only: [] do
+    get 'lan_gaming', constraints: {format: :pdf}, on: :collection
+    get 'sankalan', constraints: {format: :pdf}, on: :collection
+  end
 
 
   # end
