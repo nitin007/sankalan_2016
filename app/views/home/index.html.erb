@@ -34,14 +34,23 @@
             <a class="page-scroll" href="#sponsors">Our Sponsors</a>
           </li>
           <li>
+          <%= link_to 'Rules', rules_path(format: :pdf), target: '_blank' %>
+          </li>
+          <li>
             <a class="page-scroll" href="#contact">Contact</a>
           </li>
           <li>
             <% if resource_signed_in? %>
+              <li> 
               <%= link_to 'Team Home', team_path(current_team) if team_signed_in? %>
+              </li>
+              <li>
               <%= link_to 'Logout', logout_path, method: :delete %>
+              </li>
             <% else %>
+              <li>
               <%= link_to 'Register/Login', new_team_registration_path %>
+            </li>
             <% end %>
           </li>
         </ul>
@@ -230,6 +239,7 @@
         <h1 class="section-heading wow bounceInUp">Our Non-Technical Events</h1>
       </div>
       <div class="row">
+        <div class="col-lg-1 col-sm-0 col-xs-0"></div>
         <div class="col-lg-3 col-sm-6 col-xs-6 wow rollIn" data-wow-delay="0.7s">
           <a href="#" class="sankalantevents-box sankalantevents-13" data-modal="open_jam" data-toggle="modal" data-target=".sankalannteventsModal1">
             <div class="sankalantevents-box-spacer"></div>
@@ -238,6 +248,7 @@
             </div>
           </a>
         </div>
+        <div class="col-lg-1 col-sm-0 col-xs-0"></div>
         <div class="col-lg-3 col-sm-6 col-xs-6 wow rollIn" data-wow-delay="0.7s">
           <a href="#" class="sankalantevents-box sankalantevents-14" data-modal="open_lan" data-toggle="modal" data-target=".sankalannteventsModal2">
             <div class="sankalantevents-box-spacer"></div>
@@ -246,6 +257,7 @@
             </div>
           </a>
         </div>
+        <div class="col-lg-1 col-sm-3 col-xs-3"></div>
         <div class="col-lg-3 col-sm-6 col-xs-6 wow rollIn" data-wow-delay="0.7s">
           <a href="#" class="sankalantevents-box sankalantevents-15" data-modal="open_turn" data-toggle="modal" data-target=".sankalannteventsModal3">
             <div class="sankalantevents-box-spacer"></div>

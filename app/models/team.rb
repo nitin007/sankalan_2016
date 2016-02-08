@@ -37,6 +37,6 @@ class Team < ActiveRecord::Base
 
     def contact_no_format
       no = contact_no.to_i
-      errors.add(:base, 'Contact no must range from 7000000000 to 9999999999') if no > 7000000000 && no < 9999999999
+      errors.add(:base, 'Contact no is invalid') if no < 7000000000 || no > 9999999999
     end
 end
