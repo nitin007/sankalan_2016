@@ -38,5 +38,5 @@ production:
   database: sankalan_2016
   pool: 5
   username: root
-  password:
+  password: s@nk@l@n
  # socket: /tmp/mysql.sock

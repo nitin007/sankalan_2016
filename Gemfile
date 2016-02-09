@@ -7,7 +7,11 @@ gem 'rails', '3.2.17'
 
 gem 'mysql2', '~> 0.3.10'
 
-gem "therubyracer"
+group :assets do
+  gem 'therubyracer'
+  gem 'uglifier'
+end
+
 gem "less-rails"
 
 gem 'devise'
@@ -19,7 +23,8 @@ gem "recaptcha", require: "recaptcha/rails"
 
 gem 'jquery-rails'
 
-# gem 'unicorn'
+# Use unicorn as the app server
+gem 'unicorn'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -28,11 +33,10 @@ gem 'jquery-rails'
 # gem 'jbuilder'
 
 group :development do
-  # Use unicorn as the app server
-  gem 'unicorn'
-
   # Deploy with Capistrano
-  gem 'capistrano'
+  gem 'capistrano', '~> 3.1'
+  gem 'capistrano-rails', '~> 1.1'
+  gem 'capistrano-rvm'
 
   # To use debugger
   gem 'byebug'

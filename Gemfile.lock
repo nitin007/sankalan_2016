@@ -36,6 +36,15 @@ GEM
       i18n
       rake (>= 10.0.0)
       sshkit (~> 1.3)
+    capistrano-bundler (1.1.4)
+      capistrano (~> 3.1)
+      sshkit (~> 1.2)
+    capistrano-rails (1.1.6)
+      capistrano (~> 3.1)
+      capistrano-bundler (~> 1.1)
+    capistrano-rvm (0.1.2)
+      capistrano (~> 3.0)
+      sshkit (~> 1.2)
     commonjs (0.2.6)
     devise (3.5.1)
       bcrypt (~> 3.0)
@@ -45,6 +54,7 @@ GEM
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
     erubis (2.7.0)
+    execjs (2.6.0)
     hike (1.2.3)
     i18n (0.7.0)
     journey (1.0.4)
@@ -119,6 +129,9 @@ GEM
       polyglot
       polyglot (>= 0.3.1)
     tzinfo (0.3.46)
+    uglifier (2.7.2)
+      execjs (>= 0.3.0)
+      json (>= 1.8.0)
     unicorn (4.8.3)
       kgio (~> 2.6)
       rack
@@ -131,7 +144,9 @@ PLATFORMS
 
 DEPENDENCIES
   byebug
-  capistrano
+  capistrano (~> 3.1)
+  capistrano-rails (~> 1.1)
+  capistrano-rvm
   devise
   jquery-rails
   less-rails
@@ -139,4 +154,5 @@ DEPENDENCIES
   rails (= 3.2.17)
   recaptcha
   therubyracer
+  uglifier
   unicorn
