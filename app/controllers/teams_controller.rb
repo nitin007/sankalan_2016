@@ -10,10 +10,10 @@ class TeamsController < ApplicationController
   def show; end
 
   def change_captain
-    if @team.update_attributes(captain_id: params[:team][:captain_id])
+    if params[:team] && @team.update_attributes(captain_id: params[:team][:captain_id])
       flash[:notice] = 'You have successfully updated your captain'
     else
-      flash[:alert] = @team.errors.full_messages.to_sentence
+      flash[:alert] = params[:team] ? @team.errors.full_messages.to_sentence : "You didn't select any captain!"
     end
     redirect_to @team
   end
