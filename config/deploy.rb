@@ -8,6 +8,8 @@ set :deploy_user, 'deployer'
 set :scm, :git
 set :repo_url, 'git@github.com:nitin007/sankalan_2016.git'
 
+set :use_sudo, true
+
 # how many old releases do we want to keep
 set :keep_releases, 5
 

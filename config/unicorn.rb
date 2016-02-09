@@ -1,7 +1,6 @@
-app_folder_name = 'sankalan_2016'
 shared_path = "/home/deployer/apps/sankalan_2016/shared"
 
-worker_processes 4
+worker_processes 2
 user 'deployer'
 working_directory "/home/deployer/apps/sankalan_2016/current"
 preload_app true

@@ -11,6 +11,8 @@ server '54.164.29.110', user: 'deployer', roles: %w{web app db}, primary: true
 
 set :deploy_to, "/home/deployer/apps/sankalan_2016"
 
+set :user, "deployer"
+
 # dont try and infer something as important as environment from
 # stage name.
 set :rails_env, :production
