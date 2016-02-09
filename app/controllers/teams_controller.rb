@@ -11,10 +11,11 @@ class TeamsController < ApplicationController
 
   def change_captain
     if @team.update_attributes(captain_id: params[:team][:captain_id])
-      redirect_to @team, notice: 'You have successfully updated your captain'
+      flash[:notice] = 'You have successfully updated your captain'
     else
-      render :edit
+      flash[:alert] = @team.errors.full_messages.to_sentence
     end
+    redirect_to @team
   end
 
   private
