@@ -78,7 +78,7 @@
         <h3>Offline Registrations</h3>
         <ol>
           <li>Offline Registrations can be done on Sankalan day itself.</li>
-          <li>We reccommend you to register your team online to avoid long queues/waits.</li>
+          <li>We reccommend you to register your team online to avoid queues/waits.</li>
         </ol>
       </p>
       </div>
@@ -93,7 +93,9 @@
 
 <%= javascript_include_tag "register.js" %>
 <script type="text/javascript">
-  function ValidatePassword() {var password = document.getElementById("pwd").value;var confirmPassword = document.getElementById("repwd").value;if (password != confirmPassword) {return false;}return true;}
+    $(window).load(function(){
+        $('#myModal').modal('show');
+    });
 </script>
 
 <% content_for :head do %>

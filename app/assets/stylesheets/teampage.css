@@ -79,7 +79,7 @@ h1 {
 }
 
 .smallerbutt {
-	min-width: 100px;
+	min-width: 100px !important;
 }
 
 .rc-anchor-light {
