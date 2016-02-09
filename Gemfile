@@ -10,10 +10,12 @@ gem 'mysql2', '~> 0.3.10'
 group :assets do
   gem 'therubyracer'
   gem 'uglifier'
-  gem "font-awesome-rails"
+  gem "less-rails"
 end
 
-gem "less-rails"
+gem 'bootstrap-sass', '~> 3.1.1'
+
+gem "font-awesome-rails"
 
 gem 'devise'
 
