@@ -20,7 +20,7 @@ class Team < ActiveRecord::Base
 
   validates_format_of :team_name, with: /^[a-zA-Z0-9_\.]*$/, :multiline => true
 
-  validate :contact_no_format
+  validate :contact_no_format, on: :create
 
   has_many :members
   belongs_to :captain, class_name: Member
