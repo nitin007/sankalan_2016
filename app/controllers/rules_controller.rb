@@ -11,7 +11,7 @@ class RulesController < ApplicationController
 
     def render_file(file_name)
       respond_to do |format|
-        format.pdf { send_file "#{Rails.root}/app/views/rules/#{file_name}.pdf", type: 'application/pdf', disposition: 'inline'  }
+        format.pdf { send_file "app/views/rules/#{file_name}.pdf", type: 'application/pdf', disposition: 'inline'  }
       end
     end
 end

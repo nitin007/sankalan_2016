@@ -10,6 +10,7 @@ gem 'mysql2', '~> 0.3.10'
 group :assets do
   gem 'therubyracer'
   gem 'uglifier'
+  gem "font-awesome-rails"
 end
 
 gem "less-rails"
