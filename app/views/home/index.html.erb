@@ -50,7 +50,7 @@
             <% else %>
               <li>
               <%= link_to 'Register/Login', new_team_registration_path %>
-            </li>
+              </li>
             <% end %>
           </li>
         </ul>
@@ -69,8 +69,8 @@
             <div class="col-md-12 text-center">
               <h1 class="white wow flip" data-wow-offset="10"  data-wow-iteration="1">SANKALAN '16</h1>
               <h3 class="white wow "><!-- data-wow-iteration="3"-->Delhi University Annual Technical Fest</h3>
-              <h2 class="white wow" data-wow-offset="10"  data-wow-iteration="1">27 & 28 February</h2>
-              <h3 class="white wow flash" id="reg-soon" data-wow-duration="2s" data-wow-offset="10"  data-wow-iteration="Infinite">Registrations Opened! Register Now !!!</h3>
+              <h2 class="white wow" data-wow-offset="10"  data-wow-iteration="1">5th & 6th March</h2>
+              <h3 class="white wow flash" id="reg-soon" data-wow-duration="2s" data-wow-offset="10"  data-wow-iteration="Infinite"><%= link_to 'Register Now !!!', new_team_registration_path %></h3>
               <!--<a class="page-scroll btn btn-default" href="#about-us" role="button">Our Theme</a>-->
             </div>
           </div>
@@ -589,17 +589,45 @@
 
     <!--popup code start-->
     <div class="modal-wrapper" data-modal="wrapper_ts">
-            <div class="modal-content">
-              <button class="ducs-modal" data-modal="close_ts">&times;</button>
-              <div >
-    <p>
-      <center><h1>Technospeak</h1>
-        <em>"Technical Paper Presentation"</em></center><br>
-      <center><b>Coming Soon...</b><br/>
-    </center></p>
-              </div>
-            </div>
-          </div>
+      <div class="modal-content">
+        <button class="ducs-modal" data-modal="close_ts">&times;</button>
+        <div>
+          <p>
+            <center><h1>Technospeak</h1>
+            <em>"Technical Paper Presentation"</em></center><br>
+            <p>
+              <ul>
+    <b><i>Round 1:   Extempore</i><br>
+    Duration: 60 minutes<br></b>
+    <b>Description:</b> On the spot topics will be given to individual speakers with 3 minutes of
+    preparation time and 2 minutes to speak. Topics will all be theme-based.  (Note- While a
+    participant speaks, the next will be given the topic for preparation.)<br><br>
+
+    A short list of up to 15 participants will be generated at the end of the round.<br><br> 
+    </ul>
+    <ul>
+    <b><i>Round 2:  Debate + discussion</i></b><br>
+
+    <b>Duration: 45 minutes</b><br>
+
+    <b>Topic:</b> Cyber theft, online fraud, information security breaches – Is India ready to be a 
+    digital India? <br><br>
+
+    <b>Description:</b> 3-minute speech strictly in favor or against the chosen motion followed by
+    interjections from the audience or adjudicators. Speakers to be judged on content, clarity of
+    thought, new ideas and presentation.<br><br>
+
+    <b>Round 2</b> will be followed by a 45-minute talk by the guest speaker and declaration of results.<br><br>
+
+    <b>Prizes:</b> Best speaker (For and Against) + Best interjection<br><br>
+
+    <em>In case of lack of participation, Round 1 will be scrapped and debate will commence for 90
+    minutes.</em><br><br>
+    </ul>
+          </p>
+        </div>
+      </div>
+    </div>
 
     <!--popup code start-->
     <div class="modal-wrapper" data-modal="wrapper_tp">
