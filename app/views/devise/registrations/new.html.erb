@@ -99,12 +99,6 @@
 </div>
 <%#= render "devise/shared/links" %>
 
-<%= javascript_include_tag "register.js" %>
-<script type="text/javascript">
-    $(window).load(function(){
-        $('#myModal').modal('show');
-    });
-</script>
 
 <% content_for :head do %>
   <%= stylesheet_link_tag "register" %>
