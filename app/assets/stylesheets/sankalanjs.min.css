@@ -9,7 +9,6 @@ header:hover .header-background {transform: scale(2);-webkit-transform: scale(2)
 .sankalantevents-box:hover .sankalantevents-box-caption, .sankalantevents-box:focus.sankalantevents-box-caption{display:block;}
 body{overflow: hidden;}
 #page-top{display:inline;}
-#sponsors{background:radial-gradient(circle, #fff, #757575);}
 #mainNav{margin-bottom:0px;}
 #tevents{background: radial-gradient(circle, #CFD8DC, #263238);  }
 #tevents .section-heading { color: white !important; text-shadow: 3px 1px 4px #263238; } 
