@@ -7,7 +7,7 @@ set :branch, "master"
 set :full_app_name, "#{fetch(:application)}_#{fetch(:stage)}"
 set :server_name, "sankalan_2016"
 
-server '54.164.29.110', user: 'deployer', roles: %w{web app db}, primary: true
+server 'sankalanducs.in', user: 'deployer', roles: %w{web app db}, primary: true
 
 set :deploy_to, "/home/deployer/apps/sankalan_2016"
 
