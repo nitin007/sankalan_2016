@@ -19,7 +19,8 @@ gem "font-awesome-rails"
 
 gem 'devise'
 
-gem "recaptcha", require: "recaptcha/rails"
+gem 'recaptcha', '~> 0.4.0'
+# gem "recaptcha", require: "recaptcha/rails"
 
 gem 'test-unit'
 
