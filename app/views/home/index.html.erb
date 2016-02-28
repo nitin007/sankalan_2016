@@ -40,6 +40,9 @@
           <%= link_to 'Rules', sankalan_rules_path(format: :pdf), target: '_blank' %>
           </li>
           <li>
+          <%= link_to 'Schedule', sankalan_rules_path(format: :pdf), target: '_blank' %>
+          </li>
+          <li>
             <% if resource_signed_in? %>
               <li>
               <%= link_to 'Team Home', team_path(current_team) if team_signed_in? %>
@@ -71,6 +74,7 @@
               <h3 class="white wow "><!-- data-wow-iteration="3"-->Delhi University Annual Technical Fest</h3>
               <h2 class="white wow" data-wow-offset="10"  data-wow-iteration="1">5th & 6th March</h2>
               <h3 class="white wow flash" id="reg-soon" data-wow-duration="2s" data-wow-offset="10"  data-wow-iteration="Infinite"><%= link_to 'Register Now !!!', new_team_registration_path %></h3>
+              <h3 class="white wow flash" id="reg-soon" data-wow-duration="2s" data-wow-offset="10"  data-wow-iteration="Infinite"><%= link_to 'View Schedule', sankalan_rules_path(format: :pdf), target: '_blank' %></h3>
               <!--<a class="page-scroll btn btn-default" href="#about-us" role="button">Our Theme</a>-->
             </div>
           </div>
@@ -594,7 +598,7 @@
         <div>
           <p>
             <center><h1>Technospeak</h1>
-            <em>"Technical Paper Presentation"</em></center><br>
+            <em>"Don't raise your voice, Improve your argument."</em></center><br>
             <p>
               <ul>
     <b><i>Round 1:   Extempore</i><br>
@@ -740,60 +744,68 @@
             </div>
           </div>
         </div>
-  <h2 class="section-heading text-center">Why Sponsor Us?</h1>
 <div class="container">
-  <div class="col-lg-4 col-md-4 col-sm-4 text-center">
-    <h3>Extensive Brand Promotion</h3>
-    <p class="text-muted">Both offline and online. Social media, website, apps, posters, pamphlets - you name it, we have it!</p>
-  </div>
-  <div class="col-lg-4 col-md-4 col-sm-4 text-center">
-    <h3>Brand Value of DU</h3>
-    <p class="text-muted">Attracts students from across the country, thus helping your brand reach country wide.</p>
-  </div>
-  <div class="col-lg-4 col-md-4 col-sm-4 text-center">
-    <h3>Colossal Footfall</h3>
-    <p class="text-muted">Event that guarantees a footfall of over 1500 students is not to be missed by any.</p>
-  </div>
-</div>
-<!--
-<div class="container">
-  <div class="col-lg-12 text-center">
-      <h2 class="section-heading">Our Previous Sponsors</h2>
+  <div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-12 text-center">
+      <h3>Associate Sponsors</h3>
+      <div class="sponsor-list">
+        <center>
+          <div class="assospo">
+            <a href="http://www.nagarro.com/" target="_blank"><img src="assets/sponsor/nagarro.png" alt="Nagarro"></a>
+          </div>
+          <div class="assospo">
+            <a href="http://www.drdo.gov.in/" target="_blank"><img src="assets/sponsor/drdo.png" alt="DRDO"></a>
+          </div>
+        </center>
+      </div>
     </div>
-  <div class="row"> 
-      <div class="col-md-12 col-sm-12 col-lg-12">
-        <div class="sponsor-list">
-    <center>
-      <ul>
-         <img width="140" height="140" src="assets/sponsor/leeid.png"  alt="ID Footwear">
- <img width="140" height="140" src="assets/sponsor/nagarro.png" alt="Nagarro">
- <img width="140" height="140" src="assets/sponsor/drdo.jpg" alt="DRDO">
- <img width="140" height="140" src="assets/sponsor/josh.png" alt="Josh Technology Group">
- <img width="140" height="140" src="assets/sponsor/itemvan1.jpg" alt="Item Van">
- <img width="140" height="140" src="assets/sponsor/webblitz.jpg" alt="WebBlitz">
- <img width="140" height="140" src="assets/sponsor/mmk.png" alt="Make My Kart">
- <img width="140" height="140" src="assets/sponsor/lenskart.jpg" alt="Lenskart">
- <img width="140" height="140" src="assets/sponsor/krishnajewellers.png" alt="Krishna Jewellers">
- <img width="140" height="140" src="assets/sponsor/chipyard.png" alt="Chipyard">
- <img width="140" height="140" src="assets/sponsor/dubeat.jpg" alt="DU Beat">
- <img width="140" height="140" src="assets/sponsor/cocacola.jpg" alt="Coca Cola">
-      </ul>
-    </center>
-        </div>
-     </div>
+    <div class="col-lg-6 col-md-6 col-sm-12 text-center">
+      <h3>Media Partners</h3>
+      <div class="sponsor-list">
+        <center>
+          <div class="medspo">
+            <a href="https://appyfest.com/" target="_blank"><img src="assets/sponsor/appyfest.png" alt="Appyfest"></a>
+          </div>
+          <div class="medspo">
+            <a href="http://dubeat.com/" target="_blank"><img src="assets/sponsor/dubeat.png" alt="DU Beat"></a>
+          </div>
+        </center>
+      </div>
+    </div>
   </div>
-</div>
--->
-<h4 class="section-heading text-center lead">
-  If your interest is piqued, contact us. We would love to hear from you and associate with you. </h4>
-<div class="lead text-center"><i class="fa fa-phone lead lead"></i> +91 8802824874(Aditya) <br/>
-  <i class="fa fa-phone center lead"></i> +91 9557565556(Bharat)<br/>
-  <i class="fa fa-phone center lead"></i> +91 9996822280(Nikhil)<br/>
-  <i class="fa fa-phone center lead"></i> +91 8130876204(Parila)
-  <p class="lead center"><i class="fa fa-envelope"></i><a href="mailto:sponsors.sankalan@gmail.com">sponsors.sankalan@gmail.com</a></p>
+  <div class="row">  
+    <div class="col-lg-4 col-md-4 col-xs-6 text-center">
+      <h3>Photo Partner</h3>
+      <div class="sponsor-list">
+        <center>
+            <a href="http://www.dcop.in/" target="_blank"><img src="assets/sponsor/dcop.png" alt="DCOP"></a>
+        </center>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-4 col-xs-6 text-center">
+      <h3>Education Partner</h3>
+      <div class="sponsor-list">
+        <center>
+            <a href="https://www.weekendr.in/" target="_blank"><img src="assets/sponsor/Weekendr.png" alt="WeekendR"></a>
+        </center>
+      </div>
+    </div>
+
+    <div class="col-xs-3">
+    </div>
+    <div class="col-lg-4 col-md-4 col-xs-6 text-center">
+      <h3>Other Sponsors</h3>
+      <div class="sponsor-list">
+        <center>
+            <a href="http://shubhdeal.com/" target="_blank"><img src="assets/sponsor/shubhdeals.png" alt="Shubhdeals"></a>
+        </center>
+      </div>
+    </div>
+    <div class="col-xs-3">
+    </div>
+  </div>
 </div>
 
-</div>
 </section>
 
 

@@ -11,6 +11,8 @@ body{overflow: hidden;}
 #page-top{display:inline;}
 #mainNav{margin-bottom:0px;}
 #tevents{background: radial-gradient(circle, #CFD8DC, #263238);  }
+#sponsors{background: radial-gradient(circle, #CFD8DC, #263238); }
+#sponsors h1,h3 {color: white !important; text-shadow: 3px 1px 4px #263238;}
 #tevents .section-heading { color: white !important; text-shadow: 3px 1px 4px #263238; } 
 .wrap-container{height:100%;}
 ::-webkit-scrollbar {display: none;}
@@ -393,8 +395,21 @@ body {}
 .sponsor-list img{
       border-radius:50%;
       margin:5px 5px 5px 5px;
+      max-width: 100%;
+      height: auto;
       }
       .sponsor-list{
       margin-top:20px;
       margin-bottom:20px;
+}
+.assospo {
+  vertical-align: middle;
+  display: table-cell;
+  padding: 0 10px;
+}
+
+.medspo {
+  vertical-align: middle;
+  display: table-cell;
+  padding: 0 10px;
 }
