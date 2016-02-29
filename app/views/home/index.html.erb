@@ -40,7 +40,7 @@
           <%= link_to 'Rules', sankalan_rules_path(format: :pdf), target: '_blank' %>
           </li>
           <li>
-          <%= link_to 'Schedule', sankalan_rules_path(format: :pdf), target: '_blank' %>
+          <%= link_to 'Schedule', sankalan_schedule_path(format: :pdf), target: '_blank' %>
           </li>
           <li>
             <% if resource_signed_in? %>
@@ -607,14 +607,14 @@
     preparation time and 2 minutes to speak. Topics will all be theme-based.  (Note- While a
     participant speaks, the next will be given the topic for preparation.)<br><br>
 
-    A short list of up to 15 participants will be generated at the end of the round.<br><br> 
+    A short list of up to 15 participants will be generated at the end of the round.<br><br>
     </ul>
     <ul>
     <b><i>Round 2:  Debate + discussion</i></b><br>
 
     <b>Duration: 45 minutes</b><br>
 
-    <b>Topic:</b> Cyber theft, online fraud, information security breaches – Is India ready to be a 
+    <b>Topic:</b> Cyber theft, online fraud, information security breaches – Is India ready to be a
     digital India? <br><br>
 
     <b>Description:</b> 3-minute speech strictly in favor or against the chosen motion followed by
@@ -773,7 +773,7 @@
       </div>
     </div>
   </div>
-  <div class="row">  
+  <div class="row">
     <div class="col-lg-4 col-md-4 col-xs-6 text-center">
       <h3>Photo Partner</h3>
       <div class="sponsor-list">

@@ -7,6 +7,10 @@ class RulesController < ApplicationController
     render_file('sankalan')
   end
 
+  def schedule
+    render_file('schedule')
+  end
+
   private
 
     def render_file(file_name)
