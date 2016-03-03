@@ -402,6 +402,17 @@ body {}
       margin-top:20px;
       margin-bottom:20px;
 }
+.sponsor-list1 img{
+      border-radius:0%;
+      margin:5px 5px 5px 5px;
+      max-width: 100%;
+      height: auto;
+      }
+      .sponsor-list1{
+      margin-top:20px;
+      margin-bottom:20px;
+}
+
 .assospo {
   vertical-align: middle;
   display: table-cell;
@@ -412,4 +423,8 @@ body {}
   vertical-align: middle;
   display: table-cell;
   padding: 0 10px;
+}
+
+.titspo {
+  border-radius: 0% !important;
 }
